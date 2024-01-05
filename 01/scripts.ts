@@ -1,4 +1,12 @@
-const usuarios = [
+interface Item {
+    nome: string,
+    pets: string[]
+}
+
+type ListaDeUsuarios = Item[]
+
+
+const usuarios: ListaDeUsuarios = [
     {
         nome: "João",
         pets: ["Max"],
@@ -21,8 +29,8 @@ const usuarios = [
     },
 ];
 
-const buscarDonoPet = (lista, nomePet) => {
-    let usuarioEncontrado;
+const buscarDonoPet = (lista: ListaDeUsuarios, nomePet: string) => {
+    let usuarioEncontrado: any;
 
     for (const usuario of lista) {
         if (usuario.pets.includes(nomePet)) {
